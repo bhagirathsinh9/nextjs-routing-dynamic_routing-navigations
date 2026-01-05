@@ -1,9 +1,26 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactCompiler: true,
-   images: {
-    domains: ['encrypted-tbn0.gstatic.com','store.storeimages.cdn-apple.com','m.media-amazon.com',"sm.pcmag.com"],
-  }
+    images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'encrypted-tbn0.gstatic.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'store.storeimages.cdn-apple.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'm.media-amazon.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'sm.pcmag.com',
+      },
+    ],
+  },
 };
 
 export default nextConfig;
